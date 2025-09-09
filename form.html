@@ -2,36 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EduMax</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduMax</title>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/custom.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/custom.css" />
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="row align-items-center">
-                <div class="col">
-                    <img src="../images/EduMax_logo.png" alt="EduMax logo" class="img-fluid" />
-                </div>
-                <div class="col">
-                    <h1 class="header m-0">EduMax</h1>
-                </div>
-                <div class="col text-end d-flex align-items-center justify-content-end">
-                    <small class="text-light me-3" style="white-space: nowrap;">
-                        Logged in as <strong>Admin</strong>
-                    </small>
-                    <a class="btn btn-outline-light btn-sm" href="./logout.html" role="button">Logout</a>
-                </div>
+  <div class="container">
+    <header class="header">
+      <div class="row align-items-center">
+        <div class="col">
+          <img src="../images/EduMax_logo.png" alt="EduMax logo" class="img-fluid" />
+        </div>
+        <div class="col">
+          <h1 class="header m-0">EduMax</h1>
+        </div>
+        <div class="col text-end d-flex align-items-center justify-content-end">
+          <small class="text-light me-3" style="white-space: nowrap;">
+            Logged in as <strong>Admin</strong>
+          </small>
+          <a class="btn btn-outline-light btn-sm" href="./logout.html" role="button">Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="row g-4 mt-2">
+      <!-- Mobile toggle -->
+      <div class="d-md-none">
+        <button class="btn btn-outline-secondary w-100" type="button" data-bs-toggle="collapse"
+                data-bs-target="#adminSidebar" aria-expanded="false" aria-controls="adminSidebar">
+          Menu
+        </button>
+      </div>
+
+      <!-- Sidebar (left) -->
+      <nav class="col-12 col-md-3 col-lg-2">
+        <div id="adminSidebar" class="collapse d-md-block">
+          <div class="list-group">
+
+            <a href="#dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+            <a href="#modules" class="list-group-item list-group-item-action">Modules catalogue</a>
+            <a href="#events" class="list-group-item list-group-item-action">Learning events</a>
+            <a href="#membership" class="list-group-item list-group-item-action">Membership</a>
+
+            <!-- News with nested submenu (expanded by default) -->
+            <a class="list-group-item list-group-item-action" data-bs-toggle="collapse" href="#newsSubmenu"
+               role="button" aria-expanded="true" aria-controls="newsSubmenu">
+              News
+            </a>
+            <div class="collapse show ps-3" id="newsSubmenu">
+              <a href="#newsForm" class="list-group-item list-group-item-action" aria-current="true">Create</a>
+              <a href="#newsEdit" class="list-group-item list-group-item-action active">Edit news item</a>
             </div>
-        </header>
-        <nav style="--bs-breadcrumb-divider:'>'" aria-label="breadcrumb" class="mt-3">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./admin_dashboard.html">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="./news_manage.html">News</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Update</li>
-            </ol>
+
+            <a href="#announcements" class="list-group-item list-group-item-action">Announcements</a>
+            <a href="#security" class="list-group-item list-group-item-action">Security</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main content (right) -->
+      <section class="col-12 col-md-9 col-lg-10">
+        <!-- Breadcrumb -->
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="mt-3">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./admin_dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="./news_manage.html">News</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Update</li>
+          </ol>
         </nav>
