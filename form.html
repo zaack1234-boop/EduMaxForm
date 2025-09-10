@@ -78,7 +78,7 @@
                 <main>
                     <!-- form will be added tomorrow -->
                     <form id="newsForm" action="https://students.open.ac.uk/mct/tm252/reflect/reflect.php"
-                        method="post"></form>
+                        method="post">form>
                     <!-- Hidden field for item ID --> <input type="hidden" name="itemID"
                         value="10002000-3000-123456abcdef" />
                     <fieldset class="border p-4 rounded shadow">
@@ -89,7 +89,17 @@
                         <!-- Subject -->
                         <div class="mb-3"> <label for="subject" class="form-label">Subject <span class="text-muted">(max
                                     5 words)</span></label> <input type="text" class="form-control" id="subject"
-                                name="subject" required value="Lesson Cancelled" /> </div>
+                                name="subject" required value="Lesson Cancelled" />
+                        </div>
+                        <!-- First & Last Showing -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6"> <label for="firstShowing" class="form-label">First Showing</label>
+                                <input type="date" class="form-control" id="firstShowing" name="firstShowing"
+                                    value="2025-08-16" /> </div>
+                            <div class="col-md-6"> <label for="lastShowing" class="form-label">Last Showing</label>
+                                <input type="date" class="form-control" id="lastShowing" name="lastShowing"
+                                    value="2025-08-21" /> </div>
+                        </div>
                     </fieldset>
                     </form>
                 </main>
