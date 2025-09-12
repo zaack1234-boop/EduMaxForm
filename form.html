@@ -18,14 +18,27 @@
                     <img src="../images/EduMax_logo.png" alt="EduMax logo" class="img-fluid" />
                 </div>
                 <div class="col">
-                    <h1 class="header m-0">EduMax</h1>
+                    <div class="col">
+                        <h1 class="header m-0 fs-3">EduMax</h1>
+                    </div>
                 </div>
-                <div class="col text-end d-flex align-items-center justify-content-end">
-                    <small class="text-light me-3" style="white-space: nowrap;">
-                        Logged in as <strong>Admin</strong>
-                    </small>
-                    <a class="btn btn-outline-light btn-sm" href="./logout.html" role="button">Logout</a>
+                <!-- Right side with login/logout + search BELOW -->
+                <div class="col d-flex flex-column align-items-end">
+                    <div class="d-flex align-items-center mb-2">
+                        <small class="text-light me-3" style="white-space: nowrap;">
+                            Logged in as <strong>Admin</strong>
+                        </small>
+                        <a class="btn btn-outline-light btn-sm" href="./logout.html" role="button">Logout</a>
+                    </div>
+
+                    <!-- Search form BELOW the login row -->
+                    <form class="d-flex" role="search" style="max-width: 250px;">
+                        <input class="form-control form-control-sm me-2" type="search" placeholder="Search..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-light btn-sm" type="submit">Search</button>
+                    </form>
                 </div>
+
             </div>
         </header>
 
