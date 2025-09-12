@@ -85,3 +85,19 @@ form.register {
 /* Keep footer from hugging huge gaps */
 main { margin-bottom: 0; }
 
+/* Restrict widths for form controls */
+.form-control,
+.form-select {
+  max-width: 400px; /* sensible default for most inputs */
+}
+
+/* Dates narrower */
+input[type="date"] {
+  max-width: 220px;
+}
+
+/* Textarea larger but not too wide */
+textarea.form-control {
+  max-width: 700px;
+}
+

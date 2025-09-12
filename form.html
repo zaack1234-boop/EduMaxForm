@@ -1,172 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduMax</title>
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/custom.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduMax</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="header bg-dark text-light py-1">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-      <!-- Left: Logo + Title -->
-      <div class="d-flex align-items-center">
-        <img src="../images/EduMax_logo.png" alt="EduMax logo" class="img-fluid" style="height:40px;">
-        <h1 class="m-0 ms-2 fs-5">EduMax</h1>
-      </div>
+    <!-- Header -->
+    <header class="header bg-dark text-light py-1">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- Left: Logo + Title -->
+            <div class="d-flex align-items-center">
+                <img src="../images/EduMax_logo.png" alt="EduMax logo" class="img-fluid" style="height:40px;">
+                <h1 class="m-0 ms-2 fs-5">EduMax</h1>
+            </div>
 
-      <!-- Mobile burger (no JS) -->
-      <label for="sidebarToggle" class="btn btn-outline-light btn-sm d-md-none mb-0">☰ Menu</label>
+            <!-- Right: Search + User info + Logout -->
+            <div class="d-flex align-items-center">
+                <!-- Search bar (hidden on mobile) -->
+                <form class="me-2 d-none d-md-flex" role="search">
+                    <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
+                </form>
 
-      <!-- Right: Search + Login/Logout -->
-      <div class="d-flex align-items-center">
-        <form class="me-2" role="search">
-          <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-        </form>
-        <a href="./login.html" class="btn btn-outline-light btn-sm">Login</a>
-      </div>
+                <!-- Search icon (only visible on mobile) -->
+                <button class="btn btn-outline-light btn-sm me-2 d-md-none" aria-label="Search">
+                    🔍
+                </button>
+
+                <small class="text-light me-3" style="white-space: nowrap;">
+                    Logged in as <strong>Admin</strong>
+                </small>
+                <a href="./logout.html" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Burger below header (mobile only) -->
+    <div class="container-fluid d-md-none mt-2 text-end">
+        <label for="sidebarToggle" class="btn btn-outline-dark btn-sm mb-0">☰ Menu</label>
     </div>
-  </header>
 
-  <!-- Layout -->
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Invisible checkbox drives the mobile sidebar state -->
-      <input type="checkbox" id="sidebarToggle" class="d-none">
+    <!-- Layout -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Invisible checkbox drives the mobile sidebar state -->
+            <input type="checkbox" id="sidebarToggle" class="d-none">
 
-      <!-- Sidebar -->
-      <nav id="sidebar" class="col-12 col-md-3 col-lg-2 bg-light pt-3 px-3">
-        <h5 class="mb-3">Menu</h5>
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-12 col-md-3 col-lg-2 bg-light pt-3 px-3">
+                <h5 class="mb-3">Menu</h5>
 
-        <ul class="list-unstyled sidebar-list">
-          <li><a href="#dashboard" class="nav-link px-2 py-1">Dashboard</a></li>
-          <li><a href="#modules" class="nav-link px-2 py-1">Modules catalogue</a></li>
-          <li><a href="#events" class="nav-link px-2 py-1">Learning events</a></li>
-          <li><a href="#membership" class="nav-link px-2 py-1">Membership</a></li>
+                <ul class="list-unstyled sidebar-list">
+                    <li><a href="#dashboard" class="nav-link px-2 py-1">Dashboard</a></li>
+                    <li><a href="#modules" class="nav-link px-2 py-1">Modules catalogue</a></li>
+                    <li><a href="#events" class="nav-link px-2 py-1">Learning events</a></li>
+                    <li><a href="#membership" class="nav-link px-2 py-1">Membership</a></li>
 
-          <!-- News submenu without JS -->
-          <li class="mt-1">
-            <details open>
-              <summary class="sidebar-summary px-2 py-1">News</summary>
-              <ul class="list-unstyled ms-3 mb-0">
-                <li><a href="#newsForm" class="nav-link px-2 py-1">Create</a></li>
-                <li><a href="#newsEdit" class="nav-link px-2 py-1 active">Edit news item</a></li>
-              </ul>
-            </details>
-          </li>
+                    <!-- News submenu without JS -->
+                    <li class="mt-1">
+                        <details open>
+                            <summary class="sidebar-summary px-2 py-1">News</summary>
+                            <ul class="list-unstyled ms-3 mb-0">
+                                <li><a href="#newsForm" class="nav-link px-2 py-1">Create</a></li>
+                                <li><a href="#newsEdit" class="nav-link px-2 py-1 active">Edit news item</a></li>
+                            </ul>
+                        </details>
+                    </li>
 
-          <li><a href="#announcements" class="nav-link px-2 py-1">Announcements</a></li>
-          <li><a href="#security" class="nav-link px-2 py-1">Security</a></li>
-        </ul>
-      </nav>
+                    <li><a href="#announcements" class="nav-link px-2 py-1">Announcements</a></li>
+                    <li><a href="#security" class="nav-link px-2 py-1">Security</a></li>
+                </ul>
+            </nav>
 
-      <!-- Main content -->
-      <section class="col-12 col-md-9 col-lg-10">
-        <!-- Breadcrumb -->
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="mt-3">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./admin_dashboard.html">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="./news_manage.html">News</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Update</li>
-          </ol>
-        </nav>
+            <!-- Main content -->
+            <section class="col-12 col-md-9 col-lg-10">
+                <!-- Breadcrumb -->
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="mt-3">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./admin_dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="./news_manage.html">News</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Update</li>
+                    </ol>
+                </nav>
 
-        <main class="pb-4">
-          <!-- NEWS FORM -->
-          <form id="newsForm" action="https://students.open.ac.uk/mct/tm252/reflect/reflect.php" method="post">
-            <!-- Hidden field for item ID -->
-            <input type="hidden" name="itemID" value="10002000-3000-123456abcdef" />
+                <main class="pb-4">
+                    <!-- NEWS FORM -->
+                    <form id="newsForm" action="https://students.open.ac.uk/mct/tm252/reflect/reflect.php"
+                        method="post">
+                        <!-- Hidden field for item ID -->
+                        <input type="hidden" name="itemID" value="10002000-3000-123456abcdef" />
 
-            <fieldset class="border p-4 rounded shadow-sm">
-              <legend class="float-none w-auto px-2 text-primary fw-bold">News Details</legend>
+                        <fieldset class="border p-4 rounded shadow-sm">
+                            <legend class="float-none w-auto px-2 text-primary fw-bold">Edit News</legend>
 
-              <!-- Full Name -->
-              <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fullName" name="fullName" required value="Tony Adams" />
-              </div>
+                            <!-- Full Name -->
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" required
+                                    value="Tony Adams" />
+                            </div>
 
-              <!-- Subject -->
-              <div class="mb-3">
-                <label for="subject" class="form-label">
-                  Subject <span class="text-muted">(max 5 words)</span>
-                </label>
-                <input type="text" class="form-control" id="subject" name="subject" required value="Lesson Cancelled" />
-              </div>
+                            <!-- Subject -->
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject <span class="text-muted">(max 5
+                                        words)</span></label>
+                                <input type="text" class="form-control" id="subject" name="subject" required
+                                    value="Lesson Cancelled" />
+                            </div>
 
-              <!-- First & Last Showing -->
-              <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                  <label for="firstShowing" class="form-label">First Showing</label>
-                  <input type="date" class="form-control" id="firstShowing" name="firstShowing" value="2025-08-16" />
-                </div>
-                <div class="col-md-6">
-                  <label for="lastShowing" class="form-label">Last Showing</label>
-                  <input type="date" class="form-control" id="lastShowing" name="lastShowing" value="2025-08-21" />
-                </div>
-              </div>
+                            <!-- First & Last Showing -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstShowing" class="form-label">First Showing</label>
+                                    <input type="date" class="form-control" id="firstShowing" name="firstShowing"
+                                        value="2025-08-16" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastShowing" class="form-label">Last Showing</label>
+                                    <input type="date" class="form-control" id="lastShowing" name="lastShowing"
+                                        value="2025-08-21" />
+                                </div>
+                            </div>
 
-              <!-- Category + Priority -->
-              <div class="mb-3">
-                <label for="newsCategory" class="form-label">News Category</label>
-                <select id="newsCategory" name="newsCategory" class="form-select">
-                  <option value="general" selected>General</option>
-                  <option value="event">Event</option>
-                  <option value="urgent">Urgent</option>
-                  <option value="reminder">Reminder</option>
-                </select>
+                            <!-- Category -->
+                            <div class="mb-3">
+                                <label for="newsCategory" class="form-label">News Category</label>
+                                <select id="newsCategory" name="newsCategory" class="form-select">
+                                    <option value="general" selected>General</option>
+                                    <option value="event">Event</option>
+                                    <option value="urgent">Urgent</option>
+                                    <option value="reminder">Reminder</option>
+                                </select>
+                            </div>
 
-                <fieldset class="mt-3">
-                  <legend class="form-label mb-1">Priority</legend>
-                  <div class="form-check">
-                    <input type="radio" id="normal" name="priority" value="normal" class="form-check-input" checked>
-                    <label for="normal" class="form-check-label">Normal</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="high" name="priority" value="high" class="form-check-input">
-                    <label for="high" class="form-check-label">High</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="urgent" name="priority" value="urgent" class="form-check-input">
-                    <label for="urgent" class="form-check-label">Urgent</label>
-                  </div>
-                </fieldset>
-              </div>
-
-              <!-- Content -->
-              <div class="mb-3">
-                <label for="content" class="form-label">
-                  Content <span class="text-muted">(max 200 words)</span>
-                </label>
-                <textarea class="form-control" id="content" name="content" rows="6">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum.</textarea>
-              </div>
-
-              <!-- Buttons -->
-              <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-              </div>
-            </fieldset>
-          </form>
-        </main>
-
-        <!-- Footer -->
-        <footer class="mt-4 py-3 border-top text-center text-muted small">
-          <p class="mb-0">
-            &copy; EduMax 2025 | Admin Panel |
-            <a href="#privacy" class="text-decoration-none">Privacy Policy</a> ·
-            <a href="#terms" class="text-decoration-none">Terms of Use</a>
-          </p>
-        </footer>
-      </section>
+                            <!-- Content -->
+                            <div class="mb-3">
+                                <label for="content" class="form-label">Content <span class="text-muted">(max 200
+                                        words)</span></label>
+                                <textarea class="form-control" id="content" name="content" rows="6">Lorem ipsum...</textarea>
+                            </div>
+                        </fieldset>
+                    </form>
+                </main>
+            </section>
+        </div>
     </div>
-  </div>
 
-  <!-- If you truly don't want JS, you can remove this -->
-  <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>
