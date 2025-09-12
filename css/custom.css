@@ -44,3 +44,44 @@ form.register {
   font-size: 1.5rem; /* Smaller than default h1 */
   margin: 0;
 }
+/* Tighten sidebar item padding (vertical only) */
+.sidebar-list .nav-link {
+  display: block;
+  border-radius: .25rem;
+  padding-block: .25rem;   /* top+bottom smaller */
+  padding-inline: .5rem;   /* left+right modest */
+  color: #212529;
+}
+.sidebar-list .nav-link:hover,
+.sidebar-list .nav-link.active {
+  background-color: #e9ecef;
+  text-decoration: none;
+}
+
+/* Details/summary styling for the News group */
+.sidebar-summary {
+  cursor: pointer;
+  border-radius: .25rem;
+}
+.sidebar-summary:hover {
+  background-color: #e9ecef;
+}
+
+/* Remove extra bottom space under sidebar without killing inner spacing */
+#sidebar { padding-bottom: .25rem; }
+
+/* CSS-only burger behavior:
+   - On small screens, sidebar is hidden until the checkbox is checked.
+   - On md+ screens, sidebar is always visible and the checkbox has no effect. */
+@media (max-width: 767.98px) {
+  #sidebar {
+    display: none;
+  }
+  #sidebarToggle:checked ~ #sidebar {
+    display: block;
+  }
+}
+
+/* Keep footer from hugging huge gaps */
+main { margin-bottom: 0; }
+
