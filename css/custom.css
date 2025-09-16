@@ -89,8 +89,10 @@ textarea.form-control { max-width:700px; }
 
 /* ---------- Active: only Edit News ---------- */
 #sidebar a[href="#newsEdit"].active {
-  text-decoration:underline;
-  font-weight:600;
+  text-decoration: underline;
+  font-weight: 600;
+  background: #ffe066; /* highlight with a yellow tile */
+  color: #001f4d;
 }
 /* Clear, consistent focus for keyboard users */
 :focus-visible {
