@@ -1,7 +1,8 @@
 /* ---------- Header ---------- */
+
 .header,
 .header.bg-dark {                      /* override Bootstrap bg-dark */
-  background-color: #3c9fc3 !important;
+  background-color: #174e7c !important; /* much darker blue for contrast */
   color: #fff !important;
 }
 
