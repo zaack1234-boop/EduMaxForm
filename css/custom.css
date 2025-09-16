@@ -1,103 +1,102 @@
-.header {
-    background-color: #3c9fc3;
-    color: white;
+/* ---------- Header ---------- */
+.header,
+.header.bg-dark {                      /* override Bootstrap bg-dark */
+  background-color: #3c9fc3 !important;
+  color: #fff !important;
 }
 
-h1.header {
-    font-size: 9vw;
-}
+h1.header { font-size: 9vw; }
 
-h2, h3, h4 {
-    color: #7bd5d5;
-}
+h2, h3, h4 { color: #7bd5d5; }
 
 form.register {
-    border: 1px solid #3c9fc3;
-    background-color: lightgrey;
-    border-radius: 15px;
-    padding: 15px;
+  border: 1px solid #3c9fc3;
+  background-color: lightgrey;
+  border-radius: 15px;
+  padding: 15px;
 }
 
-.img {
-    width: 30px;
-    height: 30px;
+.img { width: 30px; height: 30px; }
+.img:hover { width: 125px; height: 125px; }
+
+/* Compact header helpers (optional) */
+.custom-header { padding-top:.5rem; padding-bottom:.5rem; }
+.logo-small { max-height:40px; width:auto; }
+.custom-header h1 { font-size:1.5rem; margin:0; }
+
+/* ---------- Unified “tile” sidebar (desktop + mobile) ---------- */
+#sidebar { padding-bottom:.25rem; }
+
+#sidebar .sidebar-list {
+  list-style:none;
+  margin:0;
+  padding:0;
+  background:#e9eef5;                 /* pale tile background */
+  border-bottom:4px solid #0b1b3b;     /* navy bar at very bottom */
 }
 
-.img:hover {
-    width: 125px;
-    height: 125px;
-}
-/* Reduce overall header padding */
-.custom-header {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+#sidebar .sidebar-list > li {
+  margin:0;
+  border-top:2px solid #fff;           /* thin white separators */
 }
 
-/* Shrink the logo */
-.logo-small {
-  max-height: 40px;  /* Try 35px or 50px if you want smaller/larger */
-  width: auto;       /* Keep aspect ratio */
+/* Strong selector beats Bootstrap .nav-link */
+#sidebar .sidebar-list a,
+#sidebar .sidebar-list span.menu-heading {
+  display:block;
+  padding:20px 24px;
+  background:#e9eef5;
+  color:#0b1b3b;                        /* navy text */
+  font-size:1.1rem;
+  line-height:1.2;
+  text-decoration:none;
 }
 
-/* Title styling */
-.custom-header h1 {
-  font-size: 1.5rem; /* Smaller than default h1 */
-  margin: 0;
-}
-/* Tighten sidebar item padding (vertical only) */
-.sidebar-list .nav-link {
-  display: block;
-  border-radius: .25rem;
-  padding-block: .25rem;   /* top+bottom smaller */
-  padding-inline: .5rem;   /* left+right modest */
-  color: #212529;
-}
-.sidebar-list .nav-link:hover,
-.sidebar-list .nav-link.active {
-  background-color: #e9ecef;
-  text-decoration: none;
+#sidebar .sidebar-list a:hover { background:#f1f5fb; }
+#sidebar .sidebar-list a:focus-visible { outline:2px solid #0b1b3b; outline-offset:-2px; }
+
+/* Non-clickable section heading */
+#sidebar .sidebar-list span.menu-heading {
+  font-weight:600;
+  background:#dee2e6;
+  cursor:default;
 }
 
-/* Details/summary styling for the News group */
-.sidebar-summary {
-  cursor: pointer;
-  border-radius: .25rem;
-}
-.sidebar-summary:hover {
-  background-color: #e9ecef;
+/* Indented submenu under News */
+#sidebar .submenu a {
+  padding-left: 60px;   /* increased indent */
+  font-size: 0.95rem;   /* slightly smaller */
+  background:#f5f7fa;   /* subtle lighter background */
 }
 
-/* Remove extra bottom space under sidebar without killing inner spacing */
-#sidebar { padding-bottom: .25rem; }
-
-/* CSS-only burger behavior:
-   - On small screens, sidebar is hidden until the checkbox is checked.
-   - On md+ screens, sidebar is always visible and the checkbox has no effect. */
+/* ---------- Mobile toggle (burger) ---------- */
 @media (max-width: 767.98px) {
-  #sidebar {
-    display: none;
-  }
-  #sidebarToggle:checked ~ #sidebar {
-    display: block;
-  }
+  #sidebar { display:none; padding:0 !important; }
+  #sidebarToggle:checked ~ #sidebar { display:block; }
+
+  /* Slightly larger tiles on mobile */
+  #sidebar .sidebar-list a,
+  #sidebar .sidebar-list span.menu-heading { font-size:1.25rem; padding:22px 24px; }
+  #sidebar .submenu a { font-size:1rem; padding-left:60px; }
 }
 
-/* Keep footer from hugging huge gaps */
-main { margin-bottom: 0; }
+/* ---------- Forms / layout ---------- */
+main { margin-bottom:0; }
+.form-control, .form-select { max-width:400px; }
+input[type="date"] { max-width:220px; }
+textarea.form-control { max-width:700px; }
 
-/* Restrict widths for form controls */
-.form-control,
-.form-select {
-  max-width: 400px; /* sensible default for most inputs */
+/* ---------- Active: only Edit News ---------- */
+#sidebar a[href="#newsEdit"].active {
+  text-decoration:underline;
+  font-weight:600;
 }
-
-/* Dates narrower */
-input[type="date"] {
-  max-width: 220px;
+/* Clear, consistent focus for keyboard users */
+:focus-visible {
+  outline: 3px solid #0d6efd;
+  outline-offset: 2px;
 }
-
-/* Textarea larger but not too wide */
-textarea.form-control {
-  max-width: 700px;
+.btn:focus-visible, .form-control:focus-visible, .form-select:focus-visible {
+  outline: 3px solid #0d6efd;
+  outline-offset: 2px;
 }
-
